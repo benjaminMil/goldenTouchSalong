@@ -188,11 +188,20 @@ svg {
 }
 
 /* Mobile Menu - starts hidden */
+.large-nav-menu {
+  display: none;
+  flex-direction: row;
+  text-align: center;
+}
+
 .nav-menu {
-  position: relative;
+  position: fixed;
   right: -100%; /* Hidden off-screen */
-  top: 124px; /* Below header */
-  flex-direction: column;
+  top: 80px; /* Below header */
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0); /* For older WebKit */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   background-color: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -580,15 +589,16 @@ footer {
   }
   .nav-menu {
     display: flex;
-    flex-direction: row;
-    width: auto;
-    box-shadow: none;
-    left: 0; /* Reset position */
-    top: 0;
-    background-color: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
   }
+  .nav-menu.active {
+    display: none;
+  }
+
+  .large-nav-menu {
+    display: flex;
+    width: auto;
+  }
+
   .nav-item {
     margin: 0 1rem;
   }
