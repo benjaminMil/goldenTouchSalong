@@ -116,13 +116,13 @@ svg {
 }
 
 .btn-dark {
-  background-color: var(--clr-black);
-  color: var(--clr-gold);
-  border: 2px solid var(--clr-black);
-}
-.btn-dark:hover {
   background-color: var(--clr-gold);
   color: var(--clr-black);
+  border: 1px solid var(--clr-black);
+}
+.btn-dark:hover {
+  background-color: var(--clr-black);
+  color: var(--clr-gold);
   border-color: var(--clr-gold);
 }
 
@@ -357,7 +357,9 @@ svg {
   gap: 0.5rem;
 }
 .brand-logo {
+  margin: 0 auto;
   max-width: 30%;
+  min-width: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
