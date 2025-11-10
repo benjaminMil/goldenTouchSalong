@@ -208,6 +208,8 @@ svg {
   width: 12.5rem;
   text-align: center;
   transition: 0.3s ease-in-out;
+  z-index: 150;
+  
 }
 
 .nav-menu.active {
