@@ -354,21 +354,14 @@ svg {
 .brands-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 cols on mobile */
-  gap: 1rem;
+  gap: 0.5rem;
 }
 .brand-logo {
-  background-color: var(--clr-grey-dark);
-  aspect-ratio: 3 / 2;
+  max-width: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: grayscale(1);
-  opacity: 0.5;
-  transition: all 0.3s ease;
-}
-.brand-logo:hover {
-  filter: grayscale(0);
-  opacity: 1;
+  opacity: 0.85;
 }
 
 /* --- Reviews Section --- */
