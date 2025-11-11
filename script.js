@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector('footer p').textContent = new Date().getFullYear();
+ // Dynamic year update in footer
+const footerP = document.querySelector('footer p');
+if (footerP) {
+  footerP.innerHTML = footerP.innerHTML.replace(/\d{4}/, new Date().getFullYear());
+}
   // Select all elements to observe for scroll animations
   const elementsToAnimate = document.querySelectorAll(".animate-on-scroll");
 
