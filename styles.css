@@ -54,7 +54,6 @@ h6 {
 h2 {
   font-size: 1.75rem;
   text-align: center;
-  /* text-transform: uppercase; */
 }
 
 h3 {
@@ -107,9 +106,9 @@ svg {
 .btn-primary {
   background-color: transparent;
   color: var(--clr-gold);
-
   border: 1px solid var(--clr-gold);
 }
+
 .btn-primary:hover {
   background-color: var(--clr-gold);
   color: var(--clr-black);
@@ -120,6 +119,7 @@ svg {
   color: var(--clr-black);
   border: 1px solid var(--clr-black);
 }
+
 .btn-dark:hover {
   background-color: var(--clr-black);
   color: var(--clr-gold);
@@ -140,6 +140,7 @@ svg {
   width: 35px;
   margin: 0 auto 0.75rem;
 }
+
 .shop-info-margin {
   margin-top: 0.375rem;
 }
@@ -149,13 +150,27 @@ svg {
 }
 
 .icon {
-  width: 20px;
+  width: 23px;
   margin: 0 auto 0.5rem;
+  padding-top: 5px;
 }
 
 .side-margin {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+}
+
+/* Initial state (hidden/transformed) */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(100px) scale(0.85);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Final state (visible/original position) - triggered by JavaScript */
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* --- Header & Navigation (Mobile First) --- */
@@ -166,7 +181,7 @@ svg {
   width: 100%;
   z-index: 100;
   transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0); /* For older WebKit */
+  -webkit-transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   background-color: rgba(0, 0, 0, 0.1);
@@ -196,10 +211,10 @@ svg {
 
 .nav-menu {
   position: fixed;
-  right: -100%; /* Hidden off-screen */
-  top: 80px; /* Below header */
+  right: -100%;
+  top: 80px;
   transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0); /* For older WebKit */
+  -webkit-transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   background-color: rgba(0, 0, 0, 0.1);
@@ -208,12 +223,10 @@ svg {
   width: 12.5rem;
   text-align: center;
   transition: 0.3s ease-in-out;
-  z-index: 150;
-  
 }
 
 .nav-menu.active {
-  right: 0px;
+  right: 0;
 }
 
 .nav-item {
@@ -230,17 +243,18 @@ svg {
   font-size: 1.2rem;
   padding: 0.5rem;
 }
+
 .nav-link:hover {
   color: var(--clr-gold);
 }
 
 .nav-cta {
-  display: none; /* Hide desktop CTA on mobile */
+  display: none;
 }
 
 /* Hamburger Menu Icon */
 .hamburger {
-  display: block; /* Show on mobile */
+  display: block;
   cursor: pointer;
 }
 
@@ -257,9 +271,11 @@ svg {
 .hamburger.active .bar:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.active .bar:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
+
 .hamburger.active .bar:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
@@ -270,9 +286,10 @@ svg {
   background: linear-gradient(rgba(21, 20, 20, 0.8), rgba(21, 20, 20, 0.8)),
     url("./images/hero3.png") no-repeat center center/cover;
 }
+
 .hero {
   position: relative;
-  min-height: 800px;
+  min-height: 620px;
   height: 90vh;
   display: flex;
   flex-direction: column;
@@ -283,9 +300,6 @@ svg {
   padding-top: 80px;
 }
 
-.hero-logo-container {
-  margin-bottom: 2rem;
-}
 .hero-img {
   width: 65%;
   max-width: 450px;
@@ -306,10 +320,12 @@ svg {
 .services {
   padding: var(--section-padding);
 }
+
 .services-grid {
   display: grid;
   gap: 2rem;
 }
+
 .service-item {
   display: flex;
   flex-wrap: wrap;
@@ -318,18 +334,21 @@ svg {
   border-bottom: 1px dashed var(--clr-gold);
   padding-bottom: 1rem;
 }
+
 .service-item h3 {
   color: var(--clr-white);
   flex-basis: 70%;
   margin-bottom: 0.5rem;
   font-size: 1.25rem;
 }
+
 .service-item .price {
   font-family: var(--font-heading);
   color: var(--clr-gold);
   font-size: 1.25rem;
   font-weight: 700;
 }
+
 .service-item p {
   flex-basis: 100%;
   margin-bottom: 0;
@@ -340,15 +359,18 @@ svg {
   padding: var(--section-padding);
   text-align: center;
 }
+
 .cta-discount h3 {
   font-size: 2.2rem;
 }
+
 .cta-discount p {
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   color: var(--clr-white);
 }
+
 .cta-discount .btn {
   margin-top: 1rem;
 }
@@ -363,11 +385,13 @@ svg {
   max-width: 600px;
   margin: 0 auto 2rem auto;
 }
+
 .brands-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cols on mobile */
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
 }
+
 .brand-logo {
   margin: 0 auto;
   max-width: 30%;
@@ -395,14 +419,17 @@ svg {
 .google-reviews span {
   color: var(--clr-grey-light);
 }
+
 .reviews {
   padding: var(--section-padding);
-  background-color: #1a1a1a; /* Slightly different bg */
+  background-color: #1a1a1a;
 }
+
 .google {
   margin-right: 1rem;
   width: 35px;
 }
+
 .rating {
   margin: 0 0.5rem;
   max-width: 100px;
@@ -413,22 +440,17 @@ svg {
   gap: 2rem;
   margin-top: 2rem;
 }
+
 .review-card {
   text-align: center;
 }
-.review-avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 1rem;
-  border: 3px solid var(--clr-gold);
-}
+
 .review-card blockquote {
   font-style: italic;
   margin-bottom: 0.5rem;
   color: var(--clr-white);
 }
+
 .review-card cite {
   font-family: var(--font-heading);
   color: var(--clr-gold);
@@ -436,84 +458,96 @@ svg {
   font-style: normal;
 }
 
-/* --- gallery --- */
+/* --- Gallery --- */
 .gallery {
   margin-top: 4rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  grid-template-rows: repeat(3, auto); /* 3 rows, height based on content */
-  gap: 1rem; /* Space between grid items; use row-gap/col-gap for separate control */
-  /* Optional: padding: 2rem 0; max-width: 1200px; margin: 0 auto; if not in .container */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 1rem;
 }
 
-/* Universal img styles: Fill grid cell, preserve aspect ratio */
 .grid-img {
   border-radius: 8px;
-  width: 100%; /* Fills the grid cell horizontally */
-  height: 100%; /* Fills vertically; rows auto-size to tallest img */
-  object-fit: cover; /* Crops to fill without distortion; use 'contain' if no cropping wanted */
-  /* Alternative for fixed aspect: aspect-ratio: 16/9; height: auto; but auto rows work better for varying sizes */
-  /* Add border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); for modern polish */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Explicit placements & spans (using nth-child or data-pos; nth-child is simpler here) */
+/* Explicit placements & spans */
 .gallery img:nth-child(1) {
-  /* Img 1: Row 1, Col 1 */
   grid-row: 1;
   grid-column: 1;
 }
 
 .gallery img:nth-child(2) {
-  /* Img 2: Row 1, Cols 2-3 (span 2) */
   grid-row: 1;
-  grid-column: 2 / span 2; /* Or 2 / 4 for explicit end */
+  grid-column: 2 / span 2;
 }
 
 .gallery img:nth-child(3) {
-  /* Img 5: Row 2, Cols 1-2 (span 2, but placed to span 1-3? Wait—adjust per your spec */
   grid-row: 2;
-  grid-column: 1 / span 2; /* Spans cols 1-2; if you meant full row span, use 1 / 4 */
+  grid-column: 1 / span 2;
 }
 
 .gallery img:nth-child(4) {
-  /* Img 3: Row 2, Col 3 (after span) */
   grid-row: 2;
   grid-column: 3;
 }
 
 .gallery img:nth-child(5) {
-  /* Img 6: Row 3, Col 1 */
   grid-row: 3;
   grid-column: 1;
 }
 
 .gallery img:nth-child(6) {
-  /* Img 4: Row 3, Col 2 */
   grid-row: 3;
   grid-column: 2;
 }
 
 .gallery img:nth-child(7) {
-  /* Img 7: Row 3, Col 3 */
   grid-row: 3;
   grid-column: 3;
 }
 
-/* --- Visit Us Section (Info & Form) --- */
-.visit-us {
+/* Stagger animations for gallery (3 columns) */
+.gallery .animate-on-scroll:nth-child(3n + 1) {
+  transition-delay: 0s;
+}
+
+.gallery .animate-on-scroll:nth-child(3n + 2) {
+  transition-delay: 0.15s;
+}
+
+.gallery .animate-on-scroll:nth-child(3n) {
+  transition-delay: 0.3s;
+}
+
+/* Stagger animations for brands: Mobile (3 columns) */
+.brands-grid .animate-on-scroll:nth-child(3n + 1) {
+  transition-delay: 0s;
+}
+
+.brands-grid .animate-on-scroll:nth-child(3n + 2) {
+  transition-delay: 0.15s;
+}
+
+.brands-grid .animate-on-scroll:nth-child(3n) {
+  transition-delay: 0.3s;
+}
+
+/* --- Contact Info Section --- */
+.contact-info {
   padding: var(--section-padding);
 }
+
 .visit-us-grid {
   display: grid;
   gap: 3rem;
 }
+
 .visit-info h3 {
   text-align: center;
-}
-.visit-info h4 {
-  color: var(--clr-gold);
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
 }
 
 .visit-info p {
@@ -524,16 +558,19 @@ svg {
   display: grid;
   gap: 1rem;
 }
+
 .form-group {
   display: flex;
   flex-direction: column;
 }
+
 #contact-form label {
   font-family: var(--font-heading);
   font-size: 0.9rem;
   margin-bottom: 0.25rem;
   color: var(--clr-grey-light);
 }
+
 #contact-form input,
 #contact-form textarea {
   background-color: var(--clr-grey-dark);
@@ -543,27 +580,27 @@ svg {
   border-radius: 5px;
   font-family: var(--font-body);
 }
+
 #contact-form input:focus,
 #contact-form textarea:focus {
   outline: 1px solid var(--clr-gold);
   border-color: var(--clr-gold);
 }
 
-/* --- Contact Info Section --- */
-.contact-info {
-  padding: var(--section-padding);
-}
-.contact-grid {
-  display: grid;
-  gap: 2rem;
+.contact-flex {
+  display: flex;
+  justify-content: space-around;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
-.contact-grid h4 {
-  margin-bottom: 0.5rem;
-}
-.contact-grid p {
+
+.contact-flex p {
   color: var(--clr-grey-light);
+}
+
+.width28 {
+  width: 28px;
+  padding-top: 0;
 }
 
 /* --- Footer --- */
@@ -576,23 +613,20 @@ footer {
 }
 
 /* --- Media Queries (Tablet & Desktop) --- */
-
 @media (min-width: 768px) {
   h2 {
     font-size: 3rem;
   }
 
-  .hero-bar span {
-    font-size: 1.1rem;
-  }
-
   /* --- Header --- */
   .hamburger {
-    display: none; /* Hide hamburger on desktop */
+    display: none;
   }
+
   .nav-menu {
     display: flex;
   }
+
   .nav-menu.active {
     display: none;
   }
@@ -605,57 +639,84 @@ footer {
   .nav-item {
     margin: 0 1rem;
   }
+
   .nav-link {
     font-size: 1rem;
   }
+
   .nav-cta {
-    display: block; /* Show desktop CTA */
+    display: block;
     margin-left: 1rem;
   }
 
   /* --- Services --- */
   .services-grid {
-    grid-template-columns: 1fr 1fr; /* 2 cols */
+    grid-template-columns: 1fr 1fr;
     gap: 2.5rem 2rem;
   }
 
   /* --- Brands --- */
   .brands-grid {
-    grid-template-columns: repeat(6, 1fr); /* 6 cols */
+    grid-template-columns: repeat(6, 1fr);
   }
+
   .brands,
   .services {
     margin-left: auto;
     margin-right: auto;
   }
 
+  /* Stagger animations for brands: Desktop (6 columns) */
+  .brands-grid .animate-on-scroll:nth-child(6n + 1) {
+    transition-delay: 0s;
+  }
+
+  .brands-grid .animate-on-scroll:nth-child(6n + 2) {
+    transition-delay: 0.1s;
+  }
+
+  .brands-grid .animate-on-scroll:nth-child(6n + 3) {
+    transition-delay: 0.2s;
+  }
+
+  .brands-grid .animate-on-scroll:nth-child(6n + 4) {
+    transition-delay: 0.3s;
+  }
+
+  .brands-grid .animate-on-scroll:nth-child(6n + 5) {
+    transition-delay: 0.4s;
+  }
+
+  .brands-grid .animate-on-scroll:nth-child(6n) {
+    transition-delay: 0.5s;
+  }
+
   /* --- Reviews --- */
   .reviews-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 cols */
+    grid-template-columns: repeat(3, 1fr);
   }
 
   /* --- Visit Us --- */
   .visit-us-grid {
-    grid-template-columns: 1fr 1fr; /* 2 cols */
+    grid-template-columns: 1fr 1fr;
     align-items: start;
   }
+
   .visit-info h3 {
     text-align: left;
   }
+
   .visit-info .walk-ins {
     text-align: start;
     width: 40ch;
   }
+
   #contact-form {
-    grid-template-columns: 1fr 1fr; /* 2 cols for name/phone */
-  }
-  .form-group-full {
-    grid-column: 1 / -1; /* Span full width */
+    grid-template-columns: 1fr 1fr;
   }
 
-  /* --- Contact Info --- */
-  .contact-grid {
-    grid-template-columns: repeat(4, 1fr);
+  .form-group-full {
+    grid-column: 1 / -1;
   }
 }
 
@@ -666,5 +727,13 @@ footer {
 
   .nav-item {
     margin: 0 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    transition: none;
+    opacity: 1;
+    transform: none;
   }
 }
