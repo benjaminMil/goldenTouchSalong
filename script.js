@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector('footer p').textContent = new Date().getFullYear();
   // Select all elements to observe for scroll animations
   const elementsToAnimate = document.querySelectorAll(".animate-on-scroll");
 
